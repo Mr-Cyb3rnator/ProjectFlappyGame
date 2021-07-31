@@ -37,6 +37,6 @@ public class Bird {
 
     public void jump(){
         velocity.y=250;
-
+//hola
     }
 }
