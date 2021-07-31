@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ProjectFlappyGame-main.iml" filepath="$PROJECT_DIR$/.idea/ProjectFlappyGame-main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/ProjectFlappyGame-main.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/ProjectFlappyGame-main.android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/ProjectFlappyGame-main.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/ProjectFlappyGame-main.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/ProjectFlappyGame-main.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/ProjectFlappyGame-main.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectFlappyGame.iml" filepath="$PROJECT_DIR$/ProjectFlappyGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android/ProjectFlappyGame.android.iml" filepath="$PROJECT_DIR$/.idea/modules/android/ProjectFlappyGame.android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/ProjectFlappyGame.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/ProjectFlappyGame.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/ProjectFlappyGame.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/ProjectFlappyGame.desktop.iml" />
     </modules>
   </component>
 </project>

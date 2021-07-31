@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
-      <module name="ProjectFlappyGame-main.android" target="11" />
       <module name="ProjectFlappyGame.android" target="11" />
     </bytecodeTargetLevel>
   </component>
