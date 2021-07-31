@@ -9,9 +9,9 @@ import java.util.Random;
 public class Tube {
     public static final int TUBE_WIDTH = 170;
 
-    private static final int FLUCTUATION = 130;
+    private static final int FLUCTUATION = 180;
     private static final int TUBE_GAP = 200;
-    private static final int LOWEST_OPENING = 120;
+    private static final int LOWEST_OPENING = 300;
 
     private Texture topTube;
     private Texture bottomTube;

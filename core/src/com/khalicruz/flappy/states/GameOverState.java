@@ -6,15 +6,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.khalicruz.flappy.flappygame;
 
 //Herencia de la clase states
-public class MenuState extends states{
+public class GameOverState extends states{
 
-    private Texture background;
+    private Texture Background;
+    private Texture GameOver;
     private Texture playButton;
 
-    public MenuState(GameStateManager gameStateManager) {
+    public GameOverState (GameStateManager gameStateManager){
         super(gameStateManager);
-        background = new Texture("bgMegaman.png");
-        playButton = new Texture("playbtn.png");
+        Background= new Texture("bgMegaman.png");
+        GameOver= new Texture("gameover.png");
+        playButton = new Texture("playButton.png");
     }
 
     @Override
@@ -33,7 +35,9 @@ public class MenuState extends states{
     protected void render(SpriteBatch spriteBatch) {
         spriteBatch.begin();
 
-        spriteBatch.draw(background, 0,0, flappygame.WIDTH, flappygame.HEIGHT);
+        spriteBatch.draw(Background, 0,0, flappygame.WIDTH, flappygame.HEIGHT);
+
+        spriteBatch.draw(GameOver, (flappygame.WIDTH/2)-(playButton.getWidth()/2),(flappygame.HEIGHT/2)-(playButton.getHeight()));
 
         spriteBatch.draw(playButton, (flappygame.WIDTH/2)-(playButton.getWidth()/2),(flappygame.HEIGHT/3)-(playButton.getHeight()));
 
@@ -42,8 +46,8 @@ public class MenuState extends states{
 
     @Override
     public void dispose() {
-        background.dispose();
+        GameOver.dispose();
+        Background.dispose();
         playButton.dispose();
-        System.out.println("Menu state disposed");
     }
 }
