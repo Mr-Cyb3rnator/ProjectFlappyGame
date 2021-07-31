@@ -22,7 +22,6 @@ public class MenuState extends states{
 
         if (Gdx.input.justTouched()){
             gsm.set(new PlayState(gsm));
-            dispose();
         }
 
     }
@@ -47,5 +46,6 @@ public class MenuState extends states{
     public void dispose() {
         background.dispose();
         playButton.dispose();
+        System.out.println("Menu state disposed");
     }
 }
