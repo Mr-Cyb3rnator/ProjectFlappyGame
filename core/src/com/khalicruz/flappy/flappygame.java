@@ -46,7 +46,7 @@ public class flappygame extends ApplicationAdapter {
 	private void setUPMusic(){
 		music = Gdx.audio.newMusic(Gdx.files.internal("music.mp3"));
 		music.setLooping(true);
-		music.setVolume(0.1f);
+		music.setVolume(1f);
 		music.play();
 	}
 }
