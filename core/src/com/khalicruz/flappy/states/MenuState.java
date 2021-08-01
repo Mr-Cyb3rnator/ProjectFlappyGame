@@ -10,12 +10,14 @@ public class MenuState extends states{
 
     private Texture background;
     private Texture playButton;
+    private Texture LogoWulu;
 
     public MenuState(GameStateManager gameStateManager) {
         super(gameStateManager);
         camera.setToOrtho(false, flappygame.WIDTH/2, flappygame.HEIGHT /2 );
         background = new Texture("bgMegamanjuego.png");
         playButton = new Texture("playbtn.png");
+        LogoWulu = new Texture("Wulu.png");
     }
 
     @Override
@@ -36,7 +38,10 @@ public class MenuState extends states{
 
         spriteBatch.begin();
 
+
         spriteBatch.draw(background, camera.position.x - (camera.viewportWidth / 2),camera.position.y - (camera.viewportHeight / 2), flappygame.WIDTH / 2, flappygame.HEIGHT /2);
+
+        spriteBatch.draw(LogoWulu, camera.position.x - ((camera.viewportWidth / 3)-4), camera.position.y- (camera.viewportHeight / 18), 349, 400);
 
         spriteBatch.draw(playButton, camera.position.x - ((camera.viewportWidth / 3)-23), camera.position.y- (camera.viewportHeight / 3));
 
@@ -47,6 +52,7 @@ public class MenuState extends states{
     public void dispose() {
         background.dispose();
         playButton.dispose();
+        LogoWulu.dispose();
         System.out.println("Menu state disposed");
     }
 }
