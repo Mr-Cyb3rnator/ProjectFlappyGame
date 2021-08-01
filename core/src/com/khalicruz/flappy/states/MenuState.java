@@ -13,7 +13,8 @@ public class MenuState extends states{
 
     public MenuState(GameStateManager gameStateManager) {
         super(gameStateManager);
-        background = new Texture("bgMegaman.png");
+        camera.setToOrtho(false, flappygame.WIDTH/2, flappygame.HEIGHT /2 );
+        background = new Texture("bgMegamanjuego.png");
         playButton = new Texture("playbtn.png");
     }
 
@@ -31,11 +32,13 @@ public class MenuState extends states{
 
     @Override
     protected void render(SpriteBatch spriteBatch) {
+        spriteBatch.setProjectionMatrix(camera.combined);
+
         spriteBatch.begin();
 
-        spriteBatch.draw(background, 0,0, flappygame.WIDTH, flappygame.HEIGHT);
+        spriteBatch.draw(background, camera.position.x - (camera.viewportWidth / 2),camera.position.y - (camera.viewportHeight / 2), flappygame.WIDTH / 2, flappygame.HEIGHT /2);
 
-        spriteBatch.draw(playButton, (flappygame.WIDTH/2)-(playButton.getWidth()/2),(flappygame.HEIGHT/3)-(playButton.getHeight()));
+        spriteBatch.draw(playButton, camera.position.x - ((camera.viewportWidth / 3)-23), camera.position.y- (camera.viewportHeight / 3));
 
         spriteBatch.end();
     }

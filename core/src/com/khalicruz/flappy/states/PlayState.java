@@ -3,6 +3,7 @@ package com.khalicruz.flappy.states;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
@@ -10,7 +11,11 @@ import com.khalicruz.flappy.flappygame;
 import com.khalicruz.flappy.sprites.Bird;
 import com.khalicruz.flappy.sprites.Tube;
 
+import javax.swing.JLabel;
+
 public class PlayState extends states {
+
+    SpriteBatch batch;
 
     private static final int TUBE_SPACING = 150;
     private static final int TUBE_COUNT = 7;
@@ -24,7 +29,13 @@ public class PlayState extends states {
     private Vector2 groundpos1;
     private Vector2 groundpos2;
 
+    private Texture GameOver;
+
     private Array<Tube> tubes;
+
+    int scoringTube = 0;
+    int score = 0;
+    BitmapFont font;
 
     public PlayState(GameStateManager gsm) {
 
@@ -41,14 +52,13 @@ public class PlayState extends states {
 
         for ( int i = 1; i <= TUBE_COUNT; i++){
             tubes.add(new Tube(i *(TUBE_SPACING+ Tube.TUBE_WIDTH)));
+            score++;
         }
-
     }
 
     @Override
     protected void handleInput() {
         if(Gdx.input.justTouched()){
-
             bird.jump();
         }
     }
@@ -68,15 +78,13 @@ public class PlayState extends states {
             }
 
             if ( tube.collides(bird.getBounds())){
-                gsm.set(new PlayState(gsm));
-                //gsm.push( new GameOverState(gsm));
-                //gsm.push(new GameOverState(gsm));
+                gsm.set(new GameOverState(gsm));
             }
 
         }
 
         if (bird.getPosition().y <= ground.getHeight())
-            gsm.set(new PlayState(gsm));
+            gsm.set(new GameOverState(gsm));
 
         camera.update();
     }
@@ -95,8 +103,10 @@ public class PlayState extends states {
         }
         spriteBatch.draw(ground, groundpos1.x, groundpos1.y);
         spriteBatch.draw ( ground, groundpos2.x, groundpos2.y);
-        spriteBatch.end();
 
+
+
+        spriteBatch.end();
     }
 
     @Override

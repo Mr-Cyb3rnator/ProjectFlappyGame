@@ -8,15 +8,16 @@ import com.khalicruz.flappy.flappygame;
 //Herencia de la clase states
 public class GameOverState extends states{
 
-    private Texture Background;
-    private Texture GameOver;
+    private Texture background;
     private Texture playButton;
+    private Texture GameOver;
 
-    public GameOverState (GameStateManager gameStateManager){
+    public GameOverState(GameStateManager gameStateManager) {
         super(gameStateManager);
-        Background= new Texture("bgMegaman.png");
-        GameOver= new Texture("gameover.png");
-        playButton = new Texture("playButton.png");
+        camera.setToOrtho(false, flappygame.WIDTH/2, flappygame.HEIGHT /2 );
+        background = new Texture("bgMegamanjuego.png");
+        playButton = new Texture("playbtn.png");
+        GameOver = new Texture("gameover.png");
     }
 
     @Override
@@ -33,21 +34,22 @@ public class GameOverState extends states{
 
     @Override
     protected void render(SpriteBatch spriteBatch) {
+        spriteBatch.setProjectionMatrix(camera.combined);
+
         spriteBatch.begin();
 
-        spriteBatch.draw(Background, 0,0, flappygame.WIDTH, flappygame.HEIGHT);
+        spriteBatch.draw(background, camera.position.x - (camera.viewportWidth / 2),camera.position.y - (camera.viewportHeight / 2), flappygame.WIDTH / 2, flappygame.HEIGHT /2);
 
-        spriteBatch.draw(GameOver, (flappygame.WIDTH/2)-(playButton.getWidth()/2),(flappygame.HEIGHT/2)-(playButton.getHeight()));
-
-        spriteBatch.draw(playButton, (flappygame.WIDTH/2)-(playButton.getWidth()/2),(flappygame.HEIGHT/3)-(playButton.getHeight()));
+        spriteBatch.draw(GameOver, camera.position.x - ((camera.viewportWidth / 3)+20), camera.position.y, 384, 84);
 
         spriteBatch.end();
     }
 
     @Override
     public void dispose() {
-        GameOver.dispose();
-        Background.dispose();
+        background.dispose();
         playButton.dispose();
+        GameOver.dispose();
+        System.out.println("Game Over state disposed");
     }
 }
