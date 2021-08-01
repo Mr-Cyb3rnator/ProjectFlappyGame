@@ -17,7 +17,7 @@ public class MenuState extends states{
         camera.setToOrtho(false, flappygame.WIDTH/2, flappygame.HEIGHT /2 );
         background = new Texture("bgMegamanjuego.png");
         playButton = new Texture("playbtn.png");
-        LogoWulu = new Texture("Wulu.png");
+        LogoWulu = new Texture("FlappyWuluVerde2.png");
     }
 
     @Override
@@ -41,9 +41,9 @@ public class MenuState extends states{
 
         spriteBatch.draw(background, camera.position.x - (camera.viewportWidth / 2),camera.position.y - (camera.viewportHeight / 2), flappygame.WIDTH / 2, flappygame.HEIGHT /2);
 
-        spriteBatch.draw(LogoWulu, camera.position.x - ((camera.viewportWidth / 3)-4), camera.position.y- (camera.viewportHeight / 18), 349, 400);
+        spriteBatch.draw(LogoWulu, camera.position.x - ((camera.viewportWidth / 2)), camera.position.y- (camera.viewportHeight / 14), 556, 331);
 
-        spriteBatch.draw(playButton, camera.position.x - ((camera.viewportWidth / 3)-23), camera.position.y- (camera.viewportHeight / 3));
+        spriteBatch.draw(playButton, camera.position.x - ((camera.viewportWidth / 2)-120), camera.position.y- (camera.viewportHeight / 3));
 
         spriteBatch.end();
     }

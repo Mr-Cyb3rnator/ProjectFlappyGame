@@ -40,7 +40,7 @@ public class GameOverState extends states{
 
         spriteBatch.draw(background, camera.position.x - (camera.viewportWidth / 2),camera.position.y - (camera.viewportHeight / 2), flappygame.WIDTH / 2, flappygame.HEIGHT /2);
 
-        spriteBatch.draw(GameOver, camera.position.x - ((camera.viewportWidth / 3)+20), camera.position.y, 384, 84);
+        spriteBatch.draw(GameOver, camera.position.x - ((camera.viewportWidth / 2)-80), camera.position.y, 384, 84);
 
         spriteBatch.end();
     }
