@@ -18,7 +18,7 @@ public class PlayState extends states {
     SpriteBatch batch;
 
     private static final int TUBE_SPACING = 150;
-    private static final int TUBE_COUNT = 7;
+    private static final int TUBE_COUNT = 150;
     private static final int GROUND_Y_OFFSET = -150;
 
     private Bird bird;
@@ -29,13 +29,8 @@ public class PlayState extends states {
     private Vector2 groundpos1;
     private Vector2 groundpos2;
 
-    private Texture GameOver;
-
     private Array<Tube> tubes;
 
-    int scoringTube = 0;
-    int score = 0;
-    BitmapFont font;
 
     public PlayState(GameStateManager gsm) {
 
@@ -52,7 +47,6 @@ public class PlayState extends states {
 
         for ( int i = 1; i <= TUBE_COUNT; i++){
             tubes.add(new Tube(i *(TUBE_SPACING+ Tube.TUBE_WIDTH)));
-            score++;
         }
     }
 
